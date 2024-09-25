@@ -1,13 +1,14 @@
-package com.sentra.usuario.security;
+package com.sentra.usuario.service;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
 import java.util.Date;
 
-@Component
-public class TokenProvider {
+@Service
+public class TokenService {
 
     @Value("${com.sentra.usuario.jwt.secretKey}")
     private String secretKey;

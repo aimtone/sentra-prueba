@@ -3,7 +3,6 @@ package com.sentra.usuario.service;
 import com.sentra.usuario.exception.ExisteUsuarioException;
 import com.sentra.usuario.model.Usuario;
 import com.sentra.usuario.repository.UsuarioRepository;
-import com.sentra.usuario.security.TokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
@@ -13,17 +12,17 @@ import java.util.Optional;
 public class UsuarioService {
 
     private final UsuarioRepository usuarioRepository;
-    private final TokenProvider tokenProvider;
+    private final TokenService tokenService;
 
     @Autowired
-    public UsuarioService(UsuarioRepository usuarioRepository, TokenProvider tokenProvider) {
+    public UsuarioService(UsuarioRepository usuarioRepository, TokenService tokenService) {
         this.usuarioRepository = usuarioRepository;
-        this.tokenProvider = tokenProvider;
+        this.tokenService = tokenService;
     }
 
     public Usuario crear(Usuario usuario) throws Exception {
         verificarUsuarioExistente(usuario.getEmail());
-        String token = tokenProvider.generarToken(usuario.getEmail());
+        String token = tokenService.generarToken(usuario.getEmail());
         usuario.setToken(token);
         usuario.setLast_login(LocalDateTime.now());
         usuario.setIsactive(true);
