@@ -15,11 +15,11 @@ Este proyecto es una prueba de Spring Boot para manejar usuarios.
 - API para la gestión de usuarios.
 - Autenticación con JWT.
 - Base de datos en memoria con H2.
-- 
+
 ## Tecnologías
 - **Lenguaje**: Java 17
 - **Framework**: Spring Boot 4
-- **Herramientas**: Maven, H2 Database, JWT
+- **Herramientas**: Maven, H2 Database, JWT (Integreado)
 
 ## Requisitos
 
@@ -46,10 +46,10 @@ Este proyecto es una prueba de Spring Boot para manejar usuarios.
      mvnw spring-boot:run
 
 ## Configuración
-El proyecto está configurado para usar una base de datos en memoria H2. Los parámetros más relevantes ya están configurados en el archivo application.properties para JPA, Hibernate y JWT.
+El proyecto está configurado para usar una base de datos en memoria H2. Los parámetros más relevantes ya están configurados en el archivo ``application.properties`` para JPA, Hibernate y JWT.
 
 ## Uso
-Descargar un software para probar API Rest como [Postman](https://www.postman.com/downloads/) y ejecutar el siguiente ``curl``
+Descargar un software para probar API Rest como [Postman](https://www.postman.com/downloads/) y ejecutar el siguiente ``curl``. Tambien lo puedes hacer directamente en la consola de Windows si tienes instalado *Curl* en tu PC
 ```curl
 curl --location 'localhost:8080/api/v1/usuario' \
 --header 'Content-Type: application/json' \
