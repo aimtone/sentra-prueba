@@ -1,22 +1,20 @@
-package com.sentra.usuario.service;
+package com.sentra.usuario.service.impl;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 import org.springframework.test.util.ReflectionTestUtils;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class TokenServiceTest {
+class TokenServiceImplTest {
 
     @InjectMocks
-    private TokenService tokenService;
+    private TokenServiceImpl tokenService;
 
     @BeforeEach
     void setUp() {
-        tokenService = new TokenService();
+        tokenService = new TokenServiceImpl();
         ReflectionTestUtils.setField(tokenService, "secretKey", "SECRETKEY");
     }
 

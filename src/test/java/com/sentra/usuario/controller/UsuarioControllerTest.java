@@ -3,7 +3,7 @@ package com.sentra.usuario.controller;
 import com.sentra.usuario.dto.Mensaje;
 import com.sentra.usuario.exception.ExisteUsuarioException;
 import com.sentra.usuario.model.Usuario;
-import com.sentra.usuario.service.UsuarioService;
+import com.sentra.usuario.service.impl.UsuarioServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -21,7 +21,7 @@ class UsuarioControllerTest {
     private UsuarioController usuarioController;
 
     @Mock
-    private UsuarioService usuarioService;
+    private UsuarioServiceImpl usuarioService;
 
     @BeforeEach
     void setUp() {

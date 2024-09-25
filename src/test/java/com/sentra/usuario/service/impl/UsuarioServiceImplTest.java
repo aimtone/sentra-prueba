@@ -1,4 +1,4 @@
-package com.sentra.usuario.service;
+package com.sentra.usuario.service.impl;
 
 import com.sentra.usuario.exception.ExisteUsuarioException;
 import com.sentra.usuario.model.Usuario;
@@ -15,15 +15,15 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
-class UsuarioServiceTest {
+class UsuarioServiceImplTest {
     @InjectMocks
-    private UsuarioService usuarioService;
+    private UsuarioServiceImpl usuarioService;
 
     @Mock
     private UsuarioRepository usuarioRepository;
 
     @Mock
-    private TokenService tokenService;
+    private TokenServiceImpl tokenService;
 
     @BeforeEach
     void setUp() {

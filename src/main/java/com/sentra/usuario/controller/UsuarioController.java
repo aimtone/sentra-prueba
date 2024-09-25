@@ -3,7 +3,7 @@ package com.sentra.usuario.controller;
 import com.sentra.usuario.dto.Mensaje;
 import com.sentra.usuario.exception.ExisteUsuarioException;
 import com.sentra.usuario.model.Usuario;
-import com.sentra.usuario.service.UsuarioService;
+import com.sentra.usuario.service.impl.UsuarioServiceImpl;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,10 +17,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1/usuario")
 public class UsuarioController {
 
-    private final UsuarioService usuarioService;
+    private final UsuarioServiceImpl usuarioService;
 
     @Autowired
-    public UsuarioController(UsuarioService usuarioService) {
+    public UsuarioController(UsuarioServiceImpl usuarioService) {
         this.usuarioService = usuarioService;
     }
 
